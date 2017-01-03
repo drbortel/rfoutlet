@@ -1,0 +1,53 @@
+ ./codesend 349491 -l 198 -p 0
+
+ON 1-5
+Received 5248307
+Received pulse 184
+
+Received 5248451
+Received pulse 183
+
+Received 5248771
+Received pulse 184
+
+Received 5250307
+Received pulse 184
+
+Received 5256451
+Received pulse 183
+
+OFF:1-5
+Received 5248316
+Received pulse 184
+
+Received 5248460
+Received pulse 183
+
+Received 5248780
+Received pulse 183
+
+Received 5250316
+Received pulse 184
+
+Received 5256460
+Received pulse 184
+
+Use RFSniffer to find RF codes for your devices
+Type: sudo /var/www/rfoutlet/RFSniffer
+Record all 6 digit codes for on/off for each outlet
+Update toggle.php with your codes and pulse
+Type: sudo nano /var/www/rfoutlet/toggle.php
+If the Received pulse is different than 189, you should edit line 38 to your pulse length
+Edit lines 6-27 wth your codes
+If you’re using a different pin than 0, Edit line 35
+Use ctrl + x then “y” to save your file
+Change permission of codesend program so sudo isn’t required:
+Type: sudo chown root.root /var/www/rfoutlet/codesend
+Type: sudo chmod 4755 /var/www/rfoutlet/codesend
+
+Browse to Raspberry Pi ip address ‘http://<your-pi-ip>/rfoutlet/ App demo
+Now you should be able to power on/off your outlets from a web browser. If you would
+like more range you can add an antenna to the transmitter chip. I cut a 12 inch wire
+from a cat 5 cable and it worked great. If you would like to schedule the outlets on
+or off you could usecrontab. Here is an example to run everyday at 8pm.
+00 20 * * * /var/www/rfoutlet/codesend “code number”
