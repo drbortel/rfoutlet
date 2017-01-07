@@ -1,6 +1,6 @@
-sudo python3 /home/pi/blink5.py &
-omxplayer -o local '/home/pi/Github/soundservicePi/sounds/Portal Shutting Down (8s).mp3'
-sudo /home/pi/rfoutlet/codesend 5248316 -l 184 -p 0
-sudo /home/pi/rfoutlet/codesend 5248460 -l 183 -p 0
-sudo /home/pi/rfoutlet/codesend 5248460 -l 183 -p 0
-sudo /home/pi/rfoutlet/codesend 5248460 -l 183 -p 0
+sudo python3 /home/pi/Github/rfoutlet/blink5.py &
+mpg321 -g 100 '/home/pi/Github/soundservicePi/sounds/Good Job Yay (7s).mp3"
+sudo /home/pi/Github/rfoutlet/codesend 5248316 -l 184 -p 0
+sudo /home/pi/Github/rfoutlet/codesend 5248460 -l 183 -p 0
+sudo /home/pi/Github/rfoutlet/codesend 5248460 -l 183 -p 0
+sudo /home/pi/Github/rfoutlet/codesend 5248460 -l 183 -p 0
