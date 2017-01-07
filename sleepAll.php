@@ -1,3 +1,3 @@
 <?php 
-exec("/home/pi/rfoutlet/sendSleepAll.sh");
+exec("/home/pi/Github/rfoutlet/sendSleepAll.sh");
 ?>
